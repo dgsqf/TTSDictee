@@ -35,22 +35,26 @@ export default {
 </script>
 
 <template>
-  <audio controls :src="id"></audio>
-
-  <form style="padding: 50px">
-    <textarea
-      v-model="text"
-      style="
+  <div style="display: flex; justify-content: center; margin: 2rem;">
+    <audio controls :src="id"></audio>
+  </div>
+  <div class="columns">
+    <div class="column">
+    <textarea v-model="text" style="
         width: 100%;
         height: 500px;
-        background: #000020;
+        background: rgba(214, 214, 214, 0.26);
         border: none;
-        color: #eaeaf7;
-      "
-    ></textarea>
-  </form>
-  <button @click="correct = true">Corriger</button>
-
-  <Difference v-if="correct" :entered="text" :corrected="ctext"></Difference>
+        color: #5c6166;
+        padding: 2rem;
+      "></textarea>
+    </div>
+    <div class="column">
+      <Difference v-if="correct" :entered="text" :corrected="ctext"></Difference>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center; margin: 2rem;">
+    <button @click="correct = true">Corriger</button>
+  </div>
   <p style="text-align: right">{{ source }}</p>
 </template>

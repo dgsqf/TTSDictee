@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Noto%20Sans%20Runic:700|Noto%20Sans%20Runic:400');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
-    --text: #eaeaf7;
-        --background: #000007;
+    --text: #5c6166;
+        --background: #fcfcfc;
         --primary: #8a8ae7;
         --secondary: #12128e;
         --accent: #3030f4;
     background:var(--background)
 }
 
+pre {
+    font-family: 'Roboto';
+    font-weight: 400;
+    color: var(--text);
+}
 body {
+    padding: 3rem;
     font-family: 'Noto Sans Runic';
     font-weight: 400;
     color: var(--text);
+    background-color:var(--background)
 }
 
 h1,

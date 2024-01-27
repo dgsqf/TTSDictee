@@ -1,5 +1,5 @@
 <template>
-   <pre><span v-for="span in spans" :style="{color: span.color}" style="white-space: normal" >{{ span.content }}</span></pre>
+   <div><span v-for="span in spans" :style="{color: span.color}" style="white-space: normal" >{{ span.content }}</span></div>
 
 </template>
 
