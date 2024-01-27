@@ -1,6 +1,5 @@
 <template>
-   <div><span v-for="span in spans" :style="{color: span.color}" style="white-space: normal" >{{ span.content }}</span></div>
-
+   <span v-for="span in spans" :style="{color: span.color}" style="white-space: normal; font-family: 'Roboto'" >{{ span.content }}</span>
 </template>
 
 <script>
@@ -26,8 +25,8 @@ export default {
         diff.forEach((part) => {
             // green for additions, red for deletions
             // grey for common parts
-            const color = part.added ? 'lime' :
-                part.removed ? 'red' : 'grey';
+            const color = part.added ? '#86b300' :
+                part.removed ? '#e65050' : '#5c6166';
             span = {
                 color: color,
                 content: part.value
