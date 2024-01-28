@@ -3,11 +3,8 @@ import { useRoute } from "vue-router";
 import { supabase } from "../lib/supabaseClient";
 import {playText} from "../lib/player.js"
 async function FetchText(id) {
-  const { data, error } = await supabase
-    .from("Dictee")
-    .select()
-    .eq("id", parseInt(id));
-  return data;
+  let value = localStorage.getItem(id);
+  return value.split("#");
 }
 
 export default {
@@ -29,8 +26,8 @@ export default {
   async mounted() {
     const route = useRoute();
     let data = await FetchText(route.params.id);
-    this.ctext = data[0].text;
-    this.source = data[0].source;
+    this.ctext = data[2]
+    this.source = data[1]
   },
 };
 </script>
